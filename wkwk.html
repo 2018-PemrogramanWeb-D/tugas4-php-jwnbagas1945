@@ -1,0 +1,70 @@
+<html>
+<head>
+    <link href="login form.css" rel="stylesheet" type="text/css">
+    <title> Form Registrasi </title>
+</head>
+
+<form action="wkwkkwk.html" method = "post">
+  <div class="imgcontainer">
+   <img src="https://media1.tenor.com/images/133bc01f196549c85cd22647972402f4/tenor.gif?itemid=12140069" width="250" height="400" alt="Diem Aja Ya Gue Syantik GIF - CewekJilbab HijabGIrl Funny GIFs">
+  </div>
+ <!-- inputan -->
+  <div class="container">
+    <label for="Nama"><b>Nama</b></label>
+    <input type="text" placeholder="Masukkan Namamu ya!" name="name" required>
+
+    <label for="Email"><b>Email</b></label>
+    <input type="text" placeholder="example@gmail.com" name="Email" required>
+	
+	
+	<!-- Password field -->
+	Password: <input type="password" placeholder="lowercase,min 6 font,max 10 font" id="myInput">
+
+	<!-- An element to toggle between password visibility -->
+	<input type="checkbox" onclick="myFunction()" minlength="8"maxlength="10" required>Show Password
+	
+	
+	<!--inputan kelamin-->
+	<tr><p> </p></tr>
+	<label for="Kelamin"><b>Jenis Kelamin</b></label>
+	<input type="radio" name="gender" value="Perempuan">Perempuan
+	<input type="radio" name="gender" value="Laki-laki">Lelaki
+	<input type="radio" name="gender" value="jenis lain">jenis lain
+	<tr><p> </p></tr><tr><p> </p></tr> <tr><p> </p></tr><tr><p> </p></tr>
+	<tr><p> </p></tr><tr><p> </p></tr>
+	
+		<button type="submit">Login</button>
+		
+		
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember?
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+  <!-- validasi form -->
+  <?php
+// define variables and set to empty values
+$nama = $email = $kelamin = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {e32
+  $nama = test_input($_POST["Nama"]);
+  $email = test_input($_POST["Email"]);
+  $web = test_input($_POST["website"]);
+  
+  $kelamin = test_input($_POST["Kelamin"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+  
+  
+</form>
